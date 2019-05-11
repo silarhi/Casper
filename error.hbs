@@ -46,7 +46,7 @@ Keep this template as lightweight as you can!
                 <section class="error-message">
                     <h1 class="error-code">{{statusCode}}</h1>
                     <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
+                    <a class="error-link" href="{{@site.url}}">Retour à la page d'accueil →</a>
                 </section>
 
                 {{#if errorDetails}}
@@ -58,8 +58,8 @@ Keep this template as lightweight as you can!
                                 <em class="error-stack-function">{{{rule}}}</em>
 
                                 {{#foreach failures}}
-                                    <p><span class="error-stack-file">Ref: {{ref}}</span></p>
-                                    <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                    <p><span class="error-stack-file">Référence : {{ref}}</span></p>
+                                    <p><span class="error-stack-file">Message : {{message}}</span></p>
                                 {{/foreach}}
                             </li>
                         {{/foreach}}
