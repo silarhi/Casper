@@ -1,5 +1,6 @@
 {
-    "name": "Silarhi",
+    "name": "silarhi",
+    "private": true,
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://demo.ghost.io",
     "version": "4.0.4",
