@@ -51,7 +51,7 @@
         <a class="subscribe-close" href="#"></a>
         <div class="subscribe-overlay-content">
             {{#if @site.logo}}
-                <img class="subscribe-overlay-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
+                <img class="subscribe-overlay-logo" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,h_88/{{img_url @site.logo absolute=true}}" alt="{{@site.title}}" />
             {{/if}}
             <div class="subscribe-form">
                 <h3 class="subscribe-overlay-title">Inscrivez-vous à {{@site.title}}</h3>
