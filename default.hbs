@@ -30,7 +30,7 @@
             <div class="gh-head-brand">
                 <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
                     {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                        <img width="118" height="44" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_118,h_44/{{img_url @site.logo absolute=true}}" srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,dpr_2.0,w_118,h_44/{{img_url @site.logo absolute=true}} 2x" alt="{{@site.title}}" />
                     {{else}}
                         {{@site.title}}
                     {{/if}}
@@ -96,7 +96,7 @@
                     {{navigation type="secondary"}}
                 </nav>
             </div>
-            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">{{t "Powered by Ghost"}}</a></div>
+            <div class="gh-powered-by"><a href="https://sainthillier.fr">Développeur Web PHP Freelance à Toulouse</a></div>
         </div>
     </footer>
 
@@ -109,6 +109,29 @@
 
 {{!-- Scripts - handle responsive videos, infinite scroll, floating headers, and galleries --}}
 <script src="{{asset "built/casper.js"}}" defer></script>
+<script>
+(function () {
+    // Lazy-load Disqus once the #disqus placeholder gets within one viewport of the screen
+    var el = document.getElementById('disqus');
+    if (!el) return;
+    var load = function () {
+        el.id = 'disqus_thread';
+        var s = document.createElement('script');
+        s.src = 'https://silarhi.disqus.com/embed.js';
+        s.async = true;
+        s.setAttribute('data-timestamp', +new Date());
+        document.body.appendChild(s);
+    };
+    if (!('IntersectionObserver' in window)) return load();
+    var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+            observer.disconnect();
+            load();
+        }
+    }, { rootMargin: '100% 0px' });
+    observer.observe(el);
+})();
+</script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}

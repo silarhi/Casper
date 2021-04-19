@@ -28,6 +28,7 @@ production stylesheet in assets/built/screen.css
 
 /* Import CSS reset and base styles */
 @import "global.css";
+@import "vendor/prism.css";
 
 :root {
 
@@ -3160,3 +3161,45 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+.has-cover:not(.home-template) .gh-head {
+    background-color: #fff;
+    color: #15171a;
+}
+
+html.dark-mode .has-cover:not(.home-template) .gh-head {
+    background: var(--color-darkmode);
+    color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    html.auto-color .has-cover:not(.home-template) .gh-head {
+        background: var(--color-darkmode);
+        color: #fff;
+    }
+}
+
+.has-cover:not(.home-template) .gh-burger::before,
+.has-cover:not(.home-template) .gh-burger::after {
+    background-color: currentColor;
+}
+
+.site-nav-logo {
+    padding: 0;
+}
+
+.gh-head-logo img {
+    max-height: 44px;
+} 
+
+.site-logo {
+    max-height: 100px;
+} 
+
+.article pre {
+    font-size: 1.4rem;
+} 
+
+/* Feature images get width/height attributes (1600x1050 covers) to reserve space and avoid CLS */
+.gh-canvas .article-image img {
+    height: auto;
+}
