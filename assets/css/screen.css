@@ -3034,3 +3034,27 @@ file to add some of your own styles. Well, you've come to
 the right place. Onward!
 
  */
+.has-cover:not(.home-template) .gh-head {
+    background-color: #fff;
+    color: #15171a;
+}
+
+html.dark-mode .has-cover:not(.home-template) .gh-head {
+    background: var(--color-darkmode);
+}
+
+.site-nav-logo {
+    padding: 0;
+}
+
+.gh-head-logo img {
+    max-height: 44px;
+} 
+
+.site-logo {
+    max-height: 100px;
+} 
+
+.article pre {
+    font-size: 1.4rem;
+} 
