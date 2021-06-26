@@ -30,7 +30,7 @@ into the {body} tag of the default.hbs template --}}
                     <li class="author-list-item">
                         {{#if profile_image}}
                         <a href="{{url}}" class="author-avatar">
-                            <img class="author-profile-image" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_100/{{img_url profile_image absolute=true}}" alt="{{name}}" />
+                            <img width="46" height="46" class="author-profile-image" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,h_46,w_46/{{img_url profile_image absolute=true}}" srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,dpr_2.0,h_46,w_46/{{img_url profile_image absolute=true}} 2x" alt="{{name}}" />
                         </a>
                         {{else}}
                         <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
@@ -53,12 +53,12 @@ into the {body} tag of the default.hbs template --}}
             {{!-- This is a responsive image, it loads different sizes depending on device
             https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
             <img
-                srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_300/{{img_url feature_image absolute=true}} 300w,
-                        https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_600/{{img_url feature_image absolute=true}} 600w,
-                        https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url feature_image absolute=true}} 1000w,
-                        https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url feature_image absolute=true}} 2000w"
+                srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_50,w_300/{{img_url feature_image absolute=true}} 300w,
+                        https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_50,w_600/{{img_url feature_image absolute=true}} 600w,
+                        https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_1000/{{img_url feature_image absolute=true}} 1000w,
+                        https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_2000/{{img_url feature_image absolute=true}} 2000w"
                 sizes="(min-width: 1400px) 1400px, 92vw"
-                src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url feature_image absolute=true}}"
+                src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_2000/{{img_url feature_image absolute=true}}"
                 alt="{{title}}"
             />
         </figure>

@@ -8,12 +8,12 @@ which templates loop over to generate a list of posts. --}}
         {{!-- This is a responsive image, it loads different sizes depending on device
         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
         <img class="post-card-image"
-            srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_300/{{img_url feature_image absolute=true}} 300w,
-                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_600/{{img_url feature_image absolute=true}} 600w,
-                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url feature_image absolute=true}} 1000w,
-                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url feature_image absolute=true}} 2000w"
+            srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_50,w_300/{{img_url feature_image absolute=true}} 300w,
+                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_50,w_600/{{img_url feature_image absolute=true}} 600w,
+                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_1000/{{img_url feature_image absolute=true}} 1000w,
+                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_2000/{{img_url feature_image absolute=true}} 2000w"
             sizes="(max-width: 1000px) 400px, 800px"
-            src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_600/{{img_url feature_image absolute=true}}"
+            src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_600/{{img_url feature_image absolute=true}}"
             alt="{{title}}"
             loading="lazy"
         />
@@ -42,7 +42,7 @@ which templates loop over to generate a list of posts. --}}
                 <li class="author-list-item">
                     {{#if profile_image}}
                     <a href="{{url}}" class="static-avatar">
-                        <img class="author-profile-image" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_100/{{img_url profile_image absolute=true}}" alt="{{name}}" />
+                        <img width="36" height="36" class="author-profile-image" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_36,h_36/{{img_url profile_image absolute=true}}" srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,dpr_2.0,w_36,h_36/{{img_url profile_image absolute=true}} 2x" alt="{{name}}" />
                     </a>
                     {{else}}
                     <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>

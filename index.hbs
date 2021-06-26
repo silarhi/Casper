@@ -7,18 +7,18 @@ into the {body} of the default.hbs template --}}
         {{!-- This is a responsive image, it loads different sizes depending on device
         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
         <img class="site-header-cover"
-            srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_300/{{img_url @site.cover_image absolute=true}} 300w,
-                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_600/{{img_url @site.cover_image absolute=true}} 600w,
-                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url @site.cover_image absolute=true}} 1000w,
-                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url @site.cover_image absolute=true}} 2000w"
+            srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_300/{{img_url @site.cover_image absolute=true}} 300w,
+                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_600/{{img_url @site.cover_image absolute=true}} 600w,
+                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_1000/{{img_url @site.cover_image absolute=true}} 1000w,
+                    https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_2000/{{img_url @site.cover_image absolute=true}} 2000w"
             sizes="100vw"
-            src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url @site.cover_image absolute=true}}"
+            src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_30,w_1000/{{img_url @site.cover_image absolute=true}}"
             alt=""
         />
     {{/if}}
     <h1 class="site-title">
         {{#if @site.logo}}
-            <img class="site-logo" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url @site.logo absolute=true}}" alt="{{@site.title}}" />
+            <img class="site-logo" width="267" height="100" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,h_100/{{img_url @site.logo absolute=true}}" srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,dpr_2.0,w_267,h_200/{{img_url @site.logo absolute=true}} 2x" alt="{{@site.title}}" />
         {{else}}
             {{@site.title}}
         {{/if}}

@@ -27,7 +27,7 @@
             <div class="gh-head-brand">
                 <a class="gh-head-logo" href="{{@site.url}}">
                     {{#if @site.logo}}
-                        <img src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,h_88/{{img_url @site.logo absolute=true}}" alt="{{@site.title}}" />
+                        <img width="118" height="44" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_118,h_44/{{img_url @site.logo absolute=true}}" srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,dpr_2.0,w_118,h_44/{{img_url @site.logo absolute=true}} 2x" alt="{{@site.title}}" />
                     {{else}}
                         {{@site.title}}
                     {{/if}}
