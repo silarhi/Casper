@@ -14,12 +14,12 @@
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img class="post-card-image"
-                    srcset="{{img_url cover_image size="s"}} 300w,
-                            {{img_url cover_image size="m"}} 600w,
-                            {{img_url cover_image size="l"}} 1000w,
-                            {{img_url cover_image size="xl"}} 2000w"
+                    srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_300/{{img_url cover_image absolute=true}} 300w,
+                            https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_600/{{img_url cover_image absolute=true}} 600w,
+                            https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url cover_image absolute=true}} 1000w,
+                            https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url cover_image absolute=true}} 2000w"
                     sizes="(max-width: 1000px) 400px, 800px"
-                    src="{{img_url cover_image size="m"}}"
+                    src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url cover_image absolute=true}}"
                     alt="{{title}}"
                 />
             </div>
@@ -29,7 +29,7 @@
             <div class="post-card-content-link">
 
                 {{#if profile_image}}
-                    <img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" />
+                    <img class="author-profile-pic" width="80" height="80" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_80/{{profile_image}}" alt="{{name}}" />
                 {{/if}}
 
                 <header class="post-card-header">
@@ -49,10 +49,31 @@
                             <a class="author-profile-social-link" href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
                         {{/if}}
                         {{#if twitter}}
-                            <a class="author-profile-social-link" href="{{twitter_url}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                            <a class="author-profile-social-link" href="{{social_url type="twitter"}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                         {{/if}}
                         {{#if facebook}}
-                            <a class="author-profile-social-link" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                            <a class="author-profile-social-link" href="{{social_url type="facebook"}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                        {{/if}}
+                        {{#if linkedin}}
+                            <a class="author-profile-social-link" href="{{social_url type="linkedin"}}" target="_blank" rel="noopener">{{> "icons/linkedin"}}</a>
+                        {{/if}}
+                        {{#if bluesky}}
+                            <a class="author-profile-social-link" href="{{social_url type="bluesky"}}" target="_blank" rel="noopener">{{> "icons/bluesky"}}</a>
+                        {{/if}}
+                        {{#if threads}}
+                            <a class="author-profile-social-link" href="{{social_url type="threads"}}" target="_blank" rel="noopener">{{> "icons/threads"}}</a>
+                        {{/if}}
+                        {{#if mastodon}}
+                            <a class="author-profile-social-link" href="{{social_url type="mastodon"}}" target="_blank" rel="noopener">{{> "icons/mastodon"}}</a>
+                        {{/if}}
+                        {{#if tiktok}}
+                            <a class="author-profile-social-link" href="{{social_url type="tiktok"}}" target="_blank" rel="noopener">{{> "icons/tiktok"}}</a>
+                        {{/if}}
+                        {{#if youtube}}
+                            <a class="author-profile-social-link" href="{{social_url type="youtube"}}" target="_blank" rel="noopener">{{> "icons/youtube"}}</a>
+                        {{/if}}
+                        {{#if instagram}}
+                            <a class="author-profile-social-link" href="{{social_url type="instagram"}}" target="_blank" rel="noopener">{{> "icons/instagram"}}</a>
                         {{/if}}
                     </div>
                 </footer>

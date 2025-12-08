@@ -32,15 +32,15 @@ into the {body} tag of the default.hbs template --}}
         <div class="article-byline">
         <section class="article-byline-content">
 
-            <ul class="author-list">
+            <ul class="author-list instapaper_ignore">
                 {{#foreach authors}}
                 <li class="author-list-item">
                     {{#if profile_image}}
-                    <a href="{{url}}" class="author-avatar" aria-label="Read more of {{name}}">
-                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    <a href="{{url}}" class="author-avatar" aria-label="Lire plus d'articles de {{name}}">
+                    	<img class="author-profile-image" width="100" height="100" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_100/{{img_url profile_image absolute=true}}" alt="{{name}}" />
                     </a>
                     {{else}}
-                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Read more of {{name}}">{{> "icons/avatar"}}</a>
+                    <a href="{{url}}" class="author-avatar author-profile-image" aria-label="Lire plus d'articles de {{name}}">{{> "icons/avatar"}}</a>
                     {{/if}}
                 </li>
                 {{/foreach}}
@@ -50,6 +50,7 @@ into the {body} tag of the default.hbs template --}}
                 <h4 class="author-name">{{authors}}</h4>
                 <div class="byline-meta-content">
                     <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">(mis à jour le {{date updated_at format='DD MMMM YYYY'}})</time>
                     {{#if reading_time}}
                         <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
                     {{/if}}
@@ -65,12 +66,12 @@ into the {body} tag of the default.hbs template --}}
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img
-                    srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
+                    srcset="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_300/{{img_url feature_image absolute=true}} 300w,
+                            https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_600/{{img_url feature_image absolute=true}} 600w,
+                            https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url feature_image absolute=true}} 1000w,
+                            https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url feature_image absolute=true}} 2000w"
                     sizes="(min-width: 1400px) 1400px, 92vw"
-                    src="{{img_url feature_image size="xl"}}"
+                    src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_2000/{{img_url feature_image absolute=true}}"
                     alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
                 />
                 {{#if feature_image_caption}}
@@ -84,6 +85,7 @@ into the {body} tag of the default.hbs template --}}
 
     <section class="gh-content gh-canvas">
         {{content}}
+        <div id="disqus"></div>
     </section>
 
     {{#if comments}}
