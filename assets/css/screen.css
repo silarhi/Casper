@@ -3226,3 +3226,8 @@ html.dark-mode .has-cover:not(.home-template) .gh-head {
 .gh-canvas .article-image img {
     height: auto;
 }
+
+/* The homepage shows the logo on the cover, so the "Le blog" h1 sits right below it */
+.site-logo + .site-title {
+    margin-top: 16px;
+}
