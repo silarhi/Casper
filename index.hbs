@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
             {{#match @custom.navigation_layout "Logo on cover"}}
                 {{#if @site.logo}}
                     <img width="288" height="100" class="site-logo" src="https://res.cloudinary.com/silarhi/image/fetch/c_limit,f_auto,q_auto,w_1000/{{img_url @site.logo absolute=true}}" alt="{{@site.title}}" />
-                    <h1 class="site-title">Le blog</h1>
+                    <h1 class="site-title">Blog PHP &amp; Symfony</h1>
                 {{else}}
                     <h1 class="site-title">{{@site.title}}</h1>
                 {{/if}}

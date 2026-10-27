@@ -3227,7 +3227,7 @@ html.dark-mode .has-cover:not(.home-template) .gh-head {
     height: auto;
 }
 
-/* The homepage shows the logo on the cover, so the "Le blog" h1 sits right below it */
+/* The homepage shows the logo on the cover, so the "Blog PHP & Symfony" h1 sits right below it */
 .site-logo + .site-title {
     margin-top: 16px;
 }
