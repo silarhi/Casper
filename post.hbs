@@ -50,7 +50,9 @@ into the {body} tag of the default.hbs template --}}
                 <h4 class="author-name">{{authors}}</h4>
                 <div class="byline-meta-content">
                     <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    {{#match (date updated_at format="YYYY-MM-DD") "!=" (date format="YYYY-MM-DD")}}
                     <time class="post-card-meta-date" datetime="{{date updated_at format="YYYY-MM-DD"}}">(mis à jour le {{date updated_at format='DD MMMM YYYY'}})</time>
+                    {{/match}}
                     {{#if reading_time}}
                         <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
                     {{/if}}
